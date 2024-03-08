@@ -37,10 +37,10 @@ Welcome to Create Lab, a vibrant artistic haven made for creatives, by creatives
 
 ## Visit our Application!
 
-Heroku Deployment: https://project-too-82a944373894.herokuapp.com/ 
-Github Repository: https://github.com/Kthao29/Project-too 
+Render Deployment:  
+Github Repository: https://github.com/JustDesmarais/CreateLab
 
 
 ## Credits
 
-Created by the **Lab Tech Team** using Node.js, Express.js, mySQL, Sequelize, Multer, and Firestore.
+Created by the **Lab Tech Team** (Kthao29, abealberts, zamatheson) using Node.js, Express.js, mySQL, Sequelize, Multer, and Firestore.
