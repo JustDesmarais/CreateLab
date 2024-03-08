@@ -1,0 +1,113 @@
+<div class="container p-4 is-fullheight">
+
+    {{!-- POST CARD EXAMPLE --}}
+    <div class="card post m-4">
+        <div class="card-content">
+            {{!-- HEADER --}}
+            <div class="media">
+                {{!-- PROFILE PICTURE --}}
+                <div class="media-left">
+                <figure class="image is-64x64">
+                    <img class="is-rounded" src="{{user.filename}}" alt="Profile image">
+                </figure>
+                </div>
+                {{!-- POST TITLE/USERNAME --}}
+                <div id="projectID" data-postID="{{id}}"></div>
+                <div class="media-content">
+                <p class="title is-4">{{title}}</p>
+                <p class="subtitle bold is-6">{{user.name}}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="content has-text-black"> {{body}}
+                <br><br>
+                {{#if filename}}
+                <a href="{{filename}}">Link To File</a>
+                {{/if}}
+                <br><br>
+            </div>
+        </div>
+        {{!-- CARD BUTTONS --}}
+            <footer class="card-footer">
+                <a class="card-footer-item" id="replyBtn">Reply</a>
+                <a class="card-footer-item" id="likeBtn">Like 👍</a>
+            </footer>
+    </div>
+
+    {{!-- NEW COMMENT FORM --}}
+    <form class="newCommentForm">
+        <div class="card m-4">
+            <div class="card-content">
+
+                    {{!-- TEXT AREA INPUT --}}
+                    <div class="field">
+                        <label class="label has-text-blue bold">New Reply</label>
+                        <div class="control">
+                        <textarea class="textarea" placeholder="Write your comment here!" id="commentBody"></textarea>
+                        </div>
+                    </div>
+
+                    {{!-- FILE UPLOAD --}}
+                    <div class="field">
+                        <div class="file has-name" id="fileUpload">
+                            <label class="file-label">
+                                <input class="file-input" type="file" name="resume">
+                                <span class="file-cta">
+                                    <span class="file-label">⬆📁</span>
+                                </span>
+                                <span class="file-name">Upload a File</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    {{!-- SUBMIT/CANCEL BUTTONS --}}
+                    <div class="field is-grouped">
+                    <p class="control">
+                        <a class="button is-primary" id="postBtn" type="submit">
+                        Submit
+                        </a>
+                    </p>
+                    <p class="control">
+                        <a class="button is-light" id="cancelBtn">
+                        Cancel
+                        </a>
+                    </p>
+                    </div>
+
+            </div>
+        </div>
+    </form>
+
+    {{!-- POPULATE COMMENTS --}}
+    {{#each comments as |comment|}}
+    <div class="card comment m-4">
+        <div class="card-content">
+            {{!-- HEADER --}}
+            <div class="media">
+                {{!-- PROFILE PICTURE --}}
+                <div class="media-left">
+                <figure class="image is-48x48">
+                    <img class="is-rounded" src="{{this.user.filename}}" alt="Profile image" data-commentID="{{id}}">
+                </figure>
+                </div>
+                {{!-- USERNAME/TIMESTAMP --}}
+                <div class="media-content">
+                <p class="title is-6 has-text-darkrose">{{this.user.name}}</p>
+                </div>
+            </div>
+            <hr>
+            {{!-- COMMENT BODY --}}
+            <div class="content has-text-black"> {{this.comment_text}}
+                <br><br>
+                {{!-- DOWNLOAD LINK (IF FILE ATTACHED) --}}
+                {{#if filename}}
+                <a href="{{filename}}">Link To File</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+<script src="/js/comment.js"></script>
+<script src="/js/project.js"></script>

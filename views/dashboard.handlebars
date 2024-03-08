@@ -1,0 +1,30 @@
+{{!-- HERO BANNER --}}
+    <div class="container">
+
+      <div class="bg-lighten wide mt-6">
+
+        {{!-- HEADER --}}
+        <p class="title is-4">{{name}}'s Dashboard</p>
+
+        {{!-- NEW POST BUTTON --}}
+        <a href="/post" class="button is-primary is-medium bold mb-4">Create Post+</a>
+
+        {{!-- USER-OWNED PROJECT PREVIEW (HAS EDIT/DELETE OPTIONS)--}}
+        {{#each projects as |project|}}
+        <div class="card m-4">
+            <div class="card-content post-preview" data-id="{{this.id}}">
+                <p class="title is-4" data-id="{{this.id}}">{{this.title}}</p>
+                <p class="subtitle" data-id="{{this.id}}">{{../name}}</p>
+            </div>
+            <div class="card-footer">
+                <a class="card-footer-item editBtn" data-id="{{this.id}}">Edit</a>
+                <a class="card-footer-item has-text-danger deleteBtn" data-id="{{this.id}}">Delete</a>
+            </div>
+        </div>
+        {{/each}}
+
+      </div>
+    </div>
+
+<script src="/js/project.js"></script>
+<script src="/js/dashboard.js"></script>

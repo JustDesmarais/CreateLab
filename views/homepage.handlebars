@@ -1,0 +1,20 @@
+    <div class="container m-4">
+
+        <p class="title is-4 mt-4">Recent Projects:</p>
+
+
+        {{!-- PROJECTS PULLED FROM DB--}}
+        {{#each projects as |project|}}
+        <div class="card m-4">
+            <div class="card-content post-preview" data-id="{{this.id}}">
+                <p class="title is-4" data-id="{{this.id}}">{{this.title}}</p>
+                <p class="subtitle" data-id="{{this.id}}">{{this.user.name}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="/js/project.js"></script>
+
+
