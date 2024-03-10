@@ -20,7 +20,7 @@
       </a>
 
       {{!-- BURGER MENU STUFF IF WE WANT TO IMPLEMENT THAT --}}
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarItems">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -28,7 +28,7 @@
     </div>
 
     {{!-- NAVBAR LINKS --}}
-    <div id="navbar" class="navbar-menu {{!-- is-active --}}">
+    <div id="navbarItems" class="navbar-menu {{!-- is-active --}}">
       <div class="navbar-start">
         <a class="navbar-item has-text-white" href="/">
           Home
@@ -73,7 +73,8 @@
       </p>
     </div>
   </footer>
-
+  
+  <script src="/js/burger.js"></script>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}

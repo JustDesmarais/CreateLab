@@ -125,9 +125,3 @@ hr {
     align-self: center;
     width: 80%;
 }
-
-@media screen and (max-width: 1023px) {
-    .navbar-brand {
-        width: 100%;
-    }
-}
