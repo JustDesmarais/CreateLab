@@ -125,3 +125,16 @@ hr {
     align-self: center;
     width: 80%;
 }
+
+
+.navbar-menu {
+    background-color: black !important;
+}
+
+.navbar-start {
+    background-color: black !important;
+}
+
+.navbar-end {
+    background-color: black !important;
+}
